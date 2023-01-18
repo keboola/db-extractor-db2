@@ -8,7 +8,7 @@ env:
     KBC_DEVELOPERPORTAL_APP: keboola.ex-db-db2
     KBC_DEVELOPERPORTAL_USERNAME: keboola+ex_db_db2_gh_actions
     KBC_DEVELOPERPORTAL_PASSWORD: '${{ secrets.KBC_DEVELOPERPORTAL_PASSWORD }}'
-    DOCKERHUB_USER: ''
+    DOCKERHUB_USER: 'keboolabot'
     DOCKERHUB_TOKEN: '${{ secrets.DOCKERHUB_TOKEN }}'
     KBC_STORAGE_TOKEN: '${{ secrets.KBC_STORAGE_TOKEN }}'
     KBC_TEST_PROJECT_URL: ''
