@@ -1,0 +1,25 @@
+{
+  "parameters": {
+    "name": "tablecolumns",
+    "outputTable": "in.c-main.tablecolumns",
+    "incremental": false,
+    "primaryKey": null,
+    "table": {
+      "schema": "SAMPLE",
+      "tableName": "sales"
+    },
+    "columns": [
+      "usergender",
+      "usercity",
+      "usersentiment",
+      "zipcode"
+    ],
+    "db": {
+      "host": "%env(string:DB2_DB_HOST)%",
+      "port": "%env(string:DB2_DB_PORT)%",
+      "user": "%env(string:DB2_DB_USER)%",
+      "#password": "%env(string:DB2_DB_PASSWORD)%",
+      "database": "%env(string:DB2_DB_DATABASE)%"
+    }
+  }
+}

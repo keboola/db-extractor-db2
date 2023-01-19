@@ -1,0 +1,16 @@
+{
+  "parameters": {
+    "name": "special",
+    "outputTable": "in.c-main.special",
+    "incremental": false,
+    "primaryKey": null,
+    "query": "SELECT SOMETHING INVALID FROM \"SAMPLE\".\"special\"",
+    "db": {
+      "host": "%env(string:DB2_DB_HOST)%",
+      "port": "%env(string:DB2_DB_PORT)%",
+      "user": "%env(string:DB2_DB_USER)%",
+      "#password": "%env(string:DB2_DB_PASSWORD)%",
+      "database": "%env(string:DB2_DB_DATABASE)%"
+    }
+  }
+}
