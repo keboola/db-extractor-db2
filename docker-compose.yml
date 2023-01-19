@@ -1,7 +1,53 @@
 version: '3'
 services:
-  dev:
-    build: .
+  app: &app
+    image: keboola/db-extractor-db2
+    build:
+      context: .
+      args:
+        - AWS_SECRET_ACCESS_KEY
+        - AWS_ACCESS_KEY_ID
+    environment:
+      - DB2_DB_HOST=db2
+      - DB2_DB_PORT=50000
+      - DB2_DB_DATABASE=SAMPLE
+      - DB2_DB_SCHEMA=SAMPLE
+      - DB2_DB_USER=db2inst1
+      - DB2_DB_PASSWORD=db2inst1
     volumes:
+      - ssh-keys:/root/.ssh
+    links:
+      - sshproxy
+      - db2
+  dev:
+    <<: *app
+    volumes:
+      - ssh-keys:/root/.ssh
       - ./:/code
       - ./data:/data
+
+  sshproxy:
+    image: keboola/db-component-ssh-proxy:latest
+    volumes:
+      - ssh-keys:/root/.ssh
+    links:
+      - db2
+
+  db2:
+    image: quay.io/keboola/db2express-c-docker
+    privileged: true
+    ports:
+      - "50000:50000"
+    expose:
+      - "50000"
+
+  wait:
+    image: waisbrot/wait
+    depends_on:
+      - db2
+    environment:
+      - TARGETS=db2:50000
+      - TIMEOUT=600
+
+volumes:
+  ssh-keys:

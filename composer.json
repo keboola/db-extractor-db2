@@ -4,6 +4,8 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
+        "ext-pdo": "*",
+        "keboola/db-extractor-common": "^16.0",
         "keboola/php-component": "^9.0"
     },
     "require-dev": {
@@ -17,13 +19,14 @@
     },
     "autoload": {
         "psr-4": {
-            "MyComponent\\": "src/"
+            "Keboola\\DbExtractor\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "MyComponent\\Tests\\": "tests/phpunit/",
-            "MyComponent\\FunctionalTests\\": "tests/functional/"
+            "Keboola\\DbExtractor\\Tests\\": "tests/phpunit/",
+            "Keboola\\DbExtractor\\TraitTests\\": "tests/traits/",
+            "Keboola\\DbExtractor\\FunctionalTests\\": "tests/functional/"
         }
     },
     "scripts": {
