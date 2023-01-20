@@ -20,13 +20,13 @@ class DB2 extends BaseExtractor
     public const INCREMENTAL_TYPES = [
         'BIGINT',
         'SMALLINT',
-        'TINYINT',
         'INT',
         'INTEGER',
         'NUMERIC',
         'DECIMAL',
-        'FLOAT',
+        'DECFLOAT',
         'DOUBLE',
+        'REAL',
         'TIMESTAMP',
         'DATE',
     ];
