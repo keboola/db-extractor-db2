@@ -1,0 +1,115 @@
+{
+    "destination": "in.c-main.timestamp",
+    "incremental": true,
+    "primary_key": [
+        "id"
+    ],
+    "metadata": [
+        {
+            "key": "KBC.name",
+            "value": "timestamp_test"
+        },
+        {
+            "key": "KBC.sanitizedName",
+            "value": "timestamp_test"
+        },
+        {
+            "key": "KBC.schema",
+            "value": "SAMPLE"
+        },
+        {
+            "key": "KBC.type",
+            "value": "TABLE"
+        }
+    ],
+    "column_metadata": {
+        "id": [
+            {
+                "key": "KBC.datatype.type",
+                "value": "INTEGER"
+            },
+            {
+                "key": "KBC.datatype.nullable",
+                "value": false
+            },
+            {
+                "key": "KBC.datatype.basetype",
+                "value": "INTEGER"
+            },
+            {
+                "key": "KBC.datatype.length",
+                "value": "4"
+            },
+            {
+                "key": "KBC.datatype.default",
+                "value": ""
+            },
+            {
+                "key": "KBC.sourceName",
+                "value": "id"
+            },
+            {
+                "key": "KBC.sanitizedName",
+                "value": "id"
+            },
+            {
+                "key": "KBC.primaryKey",
+                "value": false
+            },
+            {
+                "key": "KBC.uniqueKey",
+                "value": false
+            },
+            {
+                "key": "KBC.ordinalPosition",
+                "value": 0
+            }
+        ],
+        "timestamp": [
+            {
+                "key": "KBC.datatype.type",
+                "value": "TIMESTAMP"
+            },
+            {
+                "key": "KBC.datatype.nullable",
+                "value": false
+            },
+            {
+                "key": "KBC.datatype.basetype",
+                "value": "TIMESTAMP"
+            },
+            {
+                "key": "KBC.datatype.length",
+                "value": "10"
+            },
+            {
+                "key": "KBC.datatype.default",
+                "value": "CURRENT TIMESTAMP"
+            },
+            {
+                "key": "KBC.sourceName",
+                "value": "timestamp"
+            },
+            {
+                "key": "KBC.sanitizedName",
+                "value": "timestamp"
+            },
+            {
+                "key": "KBC.primaryKey",
+                "value": false
+            },
+            {
+                "key": "KBC.uniqueKey",
+                "value": false
+            },
+            {
+                "key": "KBC.ordinalPosition",
+                "value": 1
+            }
+        ]
+    },
+    "columns": [
+        "id",
+        "timestamp"
+    ]
+}

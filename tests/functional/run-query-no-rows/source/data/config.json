@@ -1,0 +1,16 @@
+{
+  "parameters": {
+    "name": "simple",
+    "query": "SELECT \"id\", \"name\" as \"user_name\" FROM \"SAMPLE\".\"simple\" WHERE \"name\" = 'foo'",
+    "outputTable": "in.c-main.simple",
+    "incremental": false,
+    "primaryKey": null,
+    "db": {
+      "host": "%env(string:DB2_DB_HOST)%",
+      "port": "%env(string:DB2_DB_PORT)%",
+      "user": "%env(string:DB2_DB_USER)%",
+      "#password": "%env(string:DB2_DB_PASSWORD)%",
+      "database": "%env(string:DB2_DB_DATABASE)%"
+    }
+  }
+}

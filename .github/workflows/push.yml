@@ -3,7 +3,9 @@ name: 'GitHub Actions'
     - push
 concurrency: 'ci-${{ github.ref }}'
 env:
-    APP_IMAGE: keboola-component
+    APP_IMAGE: keboola/db-extractor-db2
+    AWS_ACCESS_KEY_ID: "AKIATDSWT524VE7SYI7D"
+    AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     KBC_DEVELOPERPORTAL_VENDOR: keboola
     KBC_DEVELOPERPORTAL_APP: keboola.ex-db-db2
     KBC_DEVELOPERPORTAL_USERNAME: keboola+ex_db_db2_gh_actions
@@ -32,7 +34,7 @@ jobs:
                 run: 'docker login --username "$DOCKERHUB_USER" --password "$DOCKERHUB_TOKEN"'
             -
                 name: 'Build image'
-                run: 'docker build -t $APP_IMAGE .'
+                run: docker build --build-arg AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY --build-arg AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -t $APP_IMAGE .
             -
                 name: 'Set image tag'
                 id: tag
@@ -73,7 +75,9 @@ jobs:
                     tag_as_latest: true
             -
                 name: 'Run tests'
-                run: 'docker run ${{env.APP_IMAGE}} composer ci'
+                run: |
+                    docker-compose run --rm wait
+                    docker-compose run --rm app composer ci
     tests-in-kbc:
         needs: build
         runs-on: ubuntu-latest

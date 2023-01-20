@@ -1,0 +1,21 @@
+{
+  "parameters": {
+    "id": 3,
+    "enabled": true,
+    "name": "datetime_with_nulls",
+    "outputTable": "in.c-main.datetime_with_nulls",
+    "incremental": true,
+    "incrementalFetchingColumn": "datetime2",
+    "table": {
+      "schema": "SAMPLE",
+      "tableName": "datetime_with_nulls"
+    },
+    "db": {
+      "host": "%env(string:DB2_DB_HOST)%",
+      "port": "%env(string:DB2_DB_PORT)%",
+      "user": "%env(string:DB2_DB_USER)%",
+      "#password": "%env(string:DB2_DB_PASSWORD)%",
+      "database": "%env(string:DB2_DB_DATABASE)%"
+    }
+  }
+}

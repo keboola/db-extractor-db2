@@ -1,0 +1,22 @@
+{
+  "parameters": {
+    "id": 3,
+    "enabled": true,
+    "name": "auto-increment-timestamp",
+    "outputTable": "in.c-main.timestamp",
+    "incremental": true,
+    "incrementalFetchingColumn": "timestamp",
+    "primaryKey": ["id"],
+    "table": {
+      "schema": "SAMPLE",
+      "tableName": "timestamp_test"
+    },
+    "db": {
+      "host": "%env(string:DB2_DB_HOST)%",
+      "port": "%env(string:DB2_DB_PORT)%",
+      "user": "%env(string:DB2_DB_USER)%",
+      "#password": "%env(string:DB2_DB_PASSWORD)%",
+      "database": "%env(string:DB2_DB_DATABASE)%"
+    }
+  }
+}
