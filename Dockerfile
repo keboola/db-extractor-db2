@@ -2,7 +2,7 @@ FROM quay.io/keboola/aws-cli AS aws
 ARG AWS_SECRET_ACCESS_KEY
 ARG AWS_ACCESS_KEY_ID
 
-RUN /usr/bin/aws s3 cp s3://keboola-drivers/db2-odbc/v11.5.4_linuxx64_dsdriver.tar.gz /tmp/dsdriver.tar.gz
+RUN /usr/bin/aws s3 cp s3://keboola-drivers/db2-odbc/v10.5fp7_linuxx64_dsdriver.tar.gz /tmp/dsdriver.tar.gz
 
 FROM php:8-cli
 
