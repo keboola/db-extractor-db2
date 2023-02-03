@@ -136,11 +136,18 @@ SQL;
 
     private function processTableData(TableBuilder $builder, array $data): void
     {
-        $tableType = match ($data['TYPE']) {
-            'T', 'U' => 'TABLE',
-            'V', 'W' => 'VIEW',
-            default => $data['TYPE'],
-        };
+        switch ($data['TYPE']) {
+            case 'T':
+            case 'U':
+                $tableType = 'TABLE';
+                break;
+            case 'V':
+            case 'W':
+                $tableType = 'VIEW';
+                break;
+            default:
+                $tableType = $data['TYPE'];
+        }
 
         $builder
             ->setName($data['TABNAME'])
