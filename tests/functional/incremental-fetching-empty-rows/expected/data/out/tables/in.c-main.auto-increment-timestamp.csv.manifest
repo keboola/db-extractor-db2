@@ -19,7 +19,7 @@
         },
         {
             "key": "KBC.type",
-            "value": "TABLE"
+            "value": "table"
         }
     ],
     "column_metadata": {
@@ -35,10 +35,6 @@
             {
                 "key": "KBC.datatype.basetype",
                 "value": "INTEGER"
-            },
-            {
-                "key": "KBC.datatype.length",
-                "value": "4"
             },
             {
                 "key": "KBC.datatype.default",
@@ -62,7 +58,7 @@
             },
             {
                 "key": "KBC.ordinalPosition",
-                "value": 0
+                "value": 1
             }
         ],
         "Weir_d_Na_me": [
@@ -104,7 +100,7 @@
             },
             {
                 "key": "KBC.ordinalPosition",
-                "value": 1
+                "value": 2
             }
         ],
         "someInteger": [
@@ -119,10 +115,6 @@
             {
                 "key": "KBC.datatype.basetype",
                 "value": "INTEGER"
-            },
-            {
-                "key": "KBC.datatype.length",
-                "value": "4"
             },
             {
                 "key": "KBC.datatype.default",
@@ -146,7 +138,7 @@
             },
             {
                 "key": "KBC.ordinalPosition",
-                "value": 2
+                "value": 3
             }
         ],
         "someDecimal": [
@@ -188,7 +180,7 @@
             },
             {
                 "key": "KBC.ordinalPosition",
-                "value": 3
+                "value": 4
             }
         ],
         "type": [
@@ -230,7 +222,7 @@
             },
             {
                 "key": "KBC.ordinalPosition",
-                "value": 4
+                "value": 5
             }
         ],
         "date": [
@@ -245,10 +237,6 @@
             {
                 "key": "KBC.datatype.basetype",
                 "value": "DATE"
-            },
-            {
-                "key": "KBC.datatype.length",
-                "value": "4"
             },
             {
                 "key": "KBC.datatype.default",
@@ -272,7 +260,7 @@
             },
             {
                 "key": "KBC.ordinalPosition",
-                "value": 5
+                "value": 6
             }
         ],
         "datetime": [
@@ -287,10 +275,6 @@
             {
                 "key": "KBC.datatype.basetype",
                 "value": "TIMESTAMP"
-            },
-            {
-                "key": "KBC.datatype.length",
-                "value": "10"
             },
             {
                 "key": "KBC.datatype.default",
@@ -314,7 +298,7 @@
             },
             {
                 "key": "KBC.ordinalPosition",
-                "value": 6
+                "value": 7
             }
         ]
     },

@@ -1,2 +1,2 @@
-Creating PDO connection to "odbc:DRIVER={IBM DB2 ODBC DRIVER};HOSTNAME=db2;PORT=50000;DATABASE=SAMPLE;PROTOCOL=TCPIP;".
+Creating ODBC connection to "DRIVER=Db2;HOSTNAME=db2;PORT=50000;DATABASE=SAMPLE;PROTOCOL=TCPIP;".
 Exporting "simple" to "in.c-main.simple".

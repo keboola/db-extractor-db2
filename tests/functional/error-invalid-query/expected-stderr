@@ -1,1 +1,1 @@
-[in.c-main.special]: DB query failed: SQLSTATE[42S22]: Column not found: -206 [IBM][CLI Driver][DB2/LINUXX8664] SQL0206N  "SOMETHING" is not valid in the context where it is used.  SQLSTATE=42703  (SQLExecute[-206] at /usr/src/php/ext/pdo_odbc/odbc_stmt.c:263) Tried 5 times.
+[in.c-main.special]: DB query failed: [IBM][CLI Driver][DB2/LINUXX8664] SQL0206N  "SOMETHING" is not valid in the context where it is used.  SQLSTATE=42703  S0022 Tried 5 times.
