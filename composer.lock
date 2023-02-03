@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3611460284ab993078c825021b46975d",
+    "content-hash": "0cd66acf9c001b0e1c888dc39d8552da",
     "packages": [
         {
             "name": "doctrine/instantiator",
@@ -171,11 +171,11 @@
         },
         {
             "name": "keboola/db-extractor-adapter",
-            "version": "dev-michaljurecko-odbc-pks",
+            "version": "1.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/keboola/db-extractor-adapter",
-                "reference": "7abeb27439bd8abb85b47d464080cd8ff66d0254"
+                "reference": "7cfa4d27025d2874a9644ca21eda26a38723d753"
             },
             "require": {
                 "ext-iconv": "*",
@@ -244,7 +244,7 @@
                 }
             ],
             "description": "Set of connection adapters for DB extractors.",
-            "time": "2023-02-03T15:17:44+00:00"
+            "time": "2023-02-03T20:19:17+00:00"
         },
         {
             "name": "keboola/db-extractor-common",
@@ -1500,16 +1500,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "9.6.0",
+            "version": "9.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "70fc8be1d0b9fad56a199a4df5f9cfabfc246f84"
+                "reference": "9a52e8385f3e432d7e8ecab72c4d211a67223285"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/70fc8be1d0b9fad56a199a4df5f9cfabfc246f84",
-                "reference": "70fc8be1d0b9fad56a199a4df5f9cfabfc246f84",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/9a52e8385f3e432d7e8ecab72c4d211a67223285",
+                "reference": "9a52e8385f3e432d7e8ecab72c4d211a67223285",
                 "shasum": ""
             },
             "require": {
@@ -1582,7 +1582,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.0"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/9.6.1"
             },
             "funding": [
                 {
@@ -1598,7 +1598,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-02-03T07:32:24+00:00"
+            "time": "2023-02-03T19:31:30+00:00"
         },
         {
             "name": "pimple/pimple",
@@ -4087,18 +4087,9 @@
             "time": "2022-06-18T07:21:10+00:00"
         }
     ],
-    "aliases": [
-        {
-            "package": "keboola/db-extractor-adapter",
-            "version": "dev-michaljurecko-odbc-pks",
-            "alias": "1.10.0",
-            "alias_normalized": "1.10.0.0"
-        }
-    ],
+    "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "keboola/db-extractor-adapter": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
