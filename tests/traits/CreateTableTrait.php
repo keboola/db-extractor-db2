@@ -4,13 +4,14 @@ declare(strict_types=1);
 
 namespace Keboola\DbExtractor\TraitTests;
 
+use Keboola\DbExtractor\Extractor\DB2OdbcConnection;
 use PDO;
 
 trait CreateTableTrait
 {
     use QuoteIdentifierTrait;
 
-    protected Pdo $connection;
+    protected DB2OdbcConnection $connection;
 
     public function createTable(string $tableName, array $columns): void
     {
@@ -21,10 +22,10 @@ trait CreateTableTrait
         }
 
         // Create table
-        $this->connection->prepare(sprintf(
+        $this->connection->query(sprintf(
             'CREATE TABLE %s (%s)',
             $this->quoteIdentifier($tableName),
             implode(', ', $columnsSql)
-        ))->execute();
+        ));
     }
 }

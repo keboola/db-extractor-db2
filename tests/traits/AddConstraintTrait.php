@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 namespace Keboola\DbExtractor\TraitTests;
 
+use Keboola\DbExtractor\Extractor\DB2OdbcConnection;
 use PDO;
 
 trait AddConstraintTrait
 {
     use QuoteIdentifierTrait;
-    protected PDO $connection;
+    protected DB2OdbcConnection $connection;
     public function addConstraint(
         string $tableName,
         string $name,

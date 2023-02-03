@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Keboola\DbExtractor\FunctionalTests;
 
+use Keboola\DbExtractor\Extractor\DB2OdbcConnection;
 use Keboola\DbExtractor\TraitTests\Tables\AutoIncrementTableTrait;
 use Keboola\DbExtractor\TraitTests\Tables\NullableTableTrait;
 use Keboola\DbExtractor\TraitTests\Tables\SalesTableTrait;
@@ -21,9 +22,9 @@ class DatabaseManager
     use TimestampTableTrait;
     use NullableTableTrait;
 
-    protected PDO $connection;
+    protected DB2OdbcConnection $connection;
 
-    public function __construct(PDO $connection)
+    public function __construct(DB2OdbcConnection $connection)
     {
         $this->connection = $connection;
     }

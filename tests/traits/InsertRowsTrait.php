@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Keboola\DbExtractor\TraitTests;
 
 use Keboola\DbExtractor\Exception\UserException;
+use Keboola\DbExtractor\Extractor\DB2OdbcConnection;
 use PDO;
 use Throwable;
 
@@ -13,7 +14,7 @@ trait InsertRowsTrait
     use QuoteTrait;
     use QuoteIdentifierTrait;
 
-    protected PDO $connection;
+    protected DB2OdbcConnection $connection;
 
     public function insertRows(string $tableName, array $columns, array $rows): void
     {
