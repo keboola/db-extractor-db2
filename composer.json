@@ -6,7 +6,8 @@
         "php": "^7.4",
         "ext-pdo": "*",
         "keboola/db-extractor-common": "^16.0",
-        "keboola/php-component": "^9.0"
+        "keboola/php-component": "^9.0",
+        "ext-ibm_db2": "*"
     },
     "require-dev": {
         "php-parallel-lint/php-parallel-lint": "^1.3",

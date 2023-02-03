@@ -1,11 +1,11 @@
 Creating PDO connection to "odbc:DRIVER={IBM DB2 ODBC DRIVER};HOSTNAME=db2;PORT=50000;DATABASE=SAMPLE;PROTOCOL=TCPIP;".
 Exporting "special" to "in.c-main.special".
 Creating PDO connection to "odbc:DRIVER={IBM DB2 ODBC DRIVER};HOSTNAME=db2;PORT=50000;DATABASE=SAMPLE;PROTOCOL=TCPIP;".
-SQLSTATE[42S22]: Column not found: -206 [IBM][CLI Driver][DB2/LINUXX8664] SQL0206N  "SOMETHING" is not valid in the context where it is used.  SQLSTATE=42703  (SQLExecute[-206] at /usr/src/php/ext/pdo_odbc/odbc_stmt.c:263). Retrying... [1x]
+SQLSTATE[42S22]: Column not found: -206 [IBM][CLI Driver][DB2/LINUXX8664] SQL0206N  "SOMETHING" is not valid in the context where it is used.  SQLSTATE=42703  (SQLExecute[4294967090] at /usr/src/php/ext/pdo_odbc/odbc_stmt.c:259). Retrying... [1x]
 Creating PDO connection to "odbc:DRIVER={IBM DB2 ODBC DRIVER};HOSTNAME=db2;PORT=50000;DATABASE=SAMPLE;PROTOCOL=TCPIP;".
-SQLSTATE[42S22]: Column not found: -206 [IBM][CLI Driver][DB2/LINUXX8664] SQL0206N  "SOMETHING" is not valid in the context where it is used.  SQLSTATE=42703  (SQLExecute[-206] at /usr/src/php/ext/pdo_odbc/odbc_stmt.c:263). Retrying... [2x]
+SQLSTATE[42S22]: Column not found: -206 [IBM][CLI Driver][DB2/LINUXX8664] SQL0206N  "SOMETHING" is not valid in the context where it is used.  SQLSTATE=42703  (SQLExecute[4294967090] at /usr/src/php/ext/pdo_odbc/odbc_stmt.c:259). Retrying... [2x]
 Creating PDO connection to "odbc:DRIVER={IBM DB2 ODBC DRIVER};HOSTNAME=db2;PORT=50000;DATABASE=SAMPLE;PROTOCOL=TCPIP;".
-SQLSTATE[42S22]: Column not found: -206 [IBM][CLI Driver][DB2/LINUXX8664] SQL0206N  "SOMETHING" is not valid in the context where it is used.  SQLSTATE=42703  (SQLExecute[-206] at /usr/src/php/ext/pdo_odbc/odbc_stmt.c:263). Retrying... [3x]
+SQLSTATE[42S22]: Column not found: -206 [IBM][CLI Driver][DB2/LINUXX8664] SQL0206N  "SOMETHING" is not valid in the context where it is used.  SQLSTATE=42703  (SQLExecute[4294967090] at /usr/src/php/ext/pdo_odbc/odbc_stmt.c:259). Retrying... [3x]
 Creating PDO connection to "odbc:DRIVER={IBM DB2 ODBC DRIVER};HOSTNAME=db2;PORT=50000;DATABASE=SAMPLE;PROTOCOL=TCPIP;".
-SQLSTATE[42S22]: Column not found: -206 [IBM][CLI Driver][DB2/LINUXX8664] SQL0206N  "SOMETHING" is not valid in the context where it is used.  SQLSTATE=42703  (SQLExecute[-206] at /usr/src/php/ext/pdo_odbc/odbc_stmt.c:263). Retrying... [4x]
+SQLSTATE[42S22]: Column not found: -206 [IBM][CLI Driver][DB2/LINUXX8664] SQL0206N  "SOMETHING" is not valid in the context where it is used.  SQLSTATE=42703  (SQLExecute[4294967090] at /usr/src/php/ext/pdo_odbc/odbc_stmt.c:259). Retrying... [4x]
 Creating PDO connection to "odbc:DRIVER={IBM DB2 ODBC DRIVER};HOSTNAME=db2;PORT=50000;DATABASE=SAMPLE;PROTOCOL=TCPIP;".

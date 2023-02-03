@@ -9,7 +9,6 @@ use Keboola\DbExtractor\Adapter\ExportAdapter;
 use Keboola\DbExtractor\Adapter\Metadata\MetadataProvider;
 use Keboola\DbExtractor\Adapter\PDO\PdoExportAdapter;
 use Keboola\DbExtractor\Adapter\Query\DefaultQueryFactory;
-use Keboola\DbExtractor\Adapter\ResultWriter\DefaultResultWriter;
 use Keboola\DbExtractor\Exception\UserException;
 use Keboola\DbExtractor\TableResultFormat\Exception\ColumnNotFoundException;
 use Keboola\DbExtractorConfig\Configuration\ValueObject\DatabaseConfig;
@@ -45,7 +44,7 @@ class DB2 extends BaseExtractor
 
     protected function createExportAdapter(): ExportAdapter
     {
-        $resultWriter = new DefaultResultWriter($this->state);
+        $resultWriter = new DB2ResultWriter($this->state);
         $simpleQueryFactory = new DefaultQueryFactory($this->state);
 
         return new PdoExportAdapter(
