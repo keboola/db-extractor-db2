@@ -5,7 +5,7 @@ ARG AWS_SESSION_TOKEN
 
 RUN /usr/bin/aws s3 cp s3://keboola-drivers/db2-odbc/v11.5.4_linuxx64_dsdriver.tar.gz /tmp/dsdriver.tar.gz
 
-FROM php:8-cli
+FROM php:7.4-cli
 
 ARG COMPOSER_FLAGS="--prefer-dist --no-interaction"
 ARG DEBIAN_FRONTEND=noninteractive
