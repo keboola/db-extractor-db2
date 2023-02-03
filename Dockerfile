@@ -5,7 +5,11 @@ ARG AWS_SESSION_TOKEN
 
 RUN /usr/bin/aws s3 cp s3://keboola-drivers/db2-odbc/v11.5.4_linuxx64_dsdriver.tar.gz /tmp/dsdriver.tar.gz
 
-FROM php:8-cli
+# Note 2023-02-03:
+# The ODBC driver doesn't work properly with PHP >= 8.2.
+# This is probably due to changes in escaping, see: https://github.com/php/php-src/issues/8300 (PHP 8.2).
+# A password that contains "@" does not work, even if it is correct.
+FROM php:8.1-cli
 
 ARG COMPOSER_FLAGS="--prefer-dist --no-interaction"
 ARG DEBIAN_FRONTEND=noninteractive
