@@ -24,7 +24,7 @@ SQL;
         if (!$query) {
             return;
         }
-        $tables = $query->fetchAll(PDO::FETCH_ASSOC);
+        $tables = (array) $query->fetchAll(PDO::FETCH_ASSOC);
 
         foreach ($tables as $table) {
             $dropSql = <<<SQL
