@@ -1,6 +1,7 @@
 FROM quay.io/keboola/aws-cli AS aws
 ARG AWS_SECRET_ACCESS_KEY
 ARG AWS_ACCESS_KEY_ID
+ARG AWS_SESSION_TOKEN
 
 RUN /usr/bin/aws s3 cp s3://keboola-drivers/db2-odbc/v11.5.4_linuxx64_dsdriver.tar.gz /tmp/dsdriver.tar.gz
 
@@ -50,14 +51,10 @@ COPY --from=aws /tmp/dsdriver.tar.gz /opt/ibm/
 RUN tar -xf dsdriver.tar.gz
 
 RUN ksh dsdriver/installDSDriver
-ENV IBM_DB_HOME /opt/ibm/dsdriver
 
-# Install ibm_db2 and pdo_odbc PHP extensions
-RUN echo $IBM_DB_HOME | pecl install ibm_db2
-RUN docker-php-ext-enable ibm_db2
-RUN docker-php-ext-configure pdo_odbc --with-pdo-odbc=ibm-db2,/opt/ibm/dsdriver
-RUN docker-php-ext-install pdo_odbc
-RUN export LD_LIBRARY_PATH=$IBM_DB_HOME/lib
+ENV IBM_DB_HOME /opt/ibm/dsdriver
+ENV LD_LIBRARY_PATH=$IBM_DB_HOME/lib
+RUN echo "[Db2]\nDescription = Db2 Driver\nDriver = $IBM_DB_HOME/lib/libdb2o.so\nfileusage=1\ndontdlclose=1" > /etc/odbcinst.ini
 
 ENV LANGUAGE=en_US.UTF-8
 ENV LANG=en_US.UTF-8
