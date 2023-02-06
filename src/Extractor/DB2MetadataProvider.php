@@ -150,20 +150,22 @@ SQL;
 
     private function processColumnData(ColumnBuilder $columnBuilder, array $column): void
     {
+        $type = $column['TYPENAME'];
         $length = $column['LENGTH'];
         if ($column['SCALE'] !== 0 && $column['TYPENAME'] === 'DECIMAL') {
             $length .= ',' . $column['SCALE'];
         }
+        if (!in_array($type, DB2::FIXED_LENGTH_TYPES, true)) {
+            $columnBuilder->setLength($length);
+        }
 
         $columnBuilder
             ->setName((string) $column['COLNAME'])
-            ->setType($column['TYPENAME'])
+            ->setType($type)
             ->setDefault((string) $column['DEFAULT'])
-            ->setLength($length)
             ->setNullable(!(($column['NULLS'] === 'N')))
-            ->setOrdinalPosition((int) $column['COLNO'])
-            ->setPrimaryKey($column['UNIQUERULE'] === 'P')
-        ;
+            ->setOrdinalPosition(((int) $column['COLNO'])+1)
+            ->setPrimaryKey($column['UNIQUERULE'] === 'P');
 
         if (!is_null($column['INDEXTYPE'])) {
             $columnBuilder->setUniqueKey($column['UNIQUERULE'] === 'U');
