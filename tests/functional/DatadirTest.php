@@ -5,9 +5,11 @@ declare(strict_types=1);
 namespace Keboola\DbExtractor\FunctionalTests;
 
 use Keboola\DatadirTests\DatadirTestCase;
+use Keboola\DbExtractor\Extractor\DB2OdbcConnection;
 use Keboola\DbExtractor\TraitTests\CloseSshTunnelsTrait;
 use Keboola\DbExtractor\TraitTests\RemoveAllTablesTrait;
 use PDO;
+use Psr\Log\NullLogger;
 use RuntimeException;
 use Symfony\Component\Finder\Finder;
 use Throwable;
@@ -17,13 +19,13 @@ class DatadirTest extends DatadirTestCase
     use RemoveAllTablesTrait;
     use CloseSshTunnelsTrait;
 
-    protected PDO $connection;
+    protected DB2OdbcConnection $connection;
 
     protected string $testProjectDir;
 
     protected string $testTempDir;
 
-    public function getConnection(): PDO
+    public function getConnection(): DB2OdbcConnection
     {
         return $this->connection;
     }
@@ -50,7 +52,11 @@ class DatadirTest extends DatadirTestCase
         $this->testProjectDir = $this->getTestFileDir() . '/' . $this->dataName();
         $this->testTempDir = $this->temp->getTmpFolder();
 
-        $this->connection = PdoTestConnection::createConnection();
+        $this->connection = new DB2OdbcConnection(new NullLogger(), TestConnection::createDbConfig());
+        $this->connection->query(sprintf(
+            'SET SCHEMA "%s";',
+            getenv('DB2_DB_SCHEMA')
+        ));
         $this->removeAllTables();
         $this->closeSshTunnels();
 

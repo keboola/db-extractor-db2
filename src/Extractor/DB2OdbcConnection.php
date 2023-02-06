@@ -4,18 +4,17 @@ declare(strict_types=1);
 
 namespace Keboola\DbExtractor\Extractor;
 
-use Keboola\DbExtractor\Adapter\PDO\PdoConnection;
+use Keboola\DbExtractor\Adapter\ODBC\OdbcConnection;
 use Keboola\DbExtractorConfig\Configuration\ValueObject\DatabaseConfig;
-use PDO;
 use Psr\Log\LoggerInterface;
 
-class DB2PdoConnection extends PdoConnection
+class DB2OdbcConnection extends OdbcConnection
 {
 
     public function __construct(LoggerInterface $logger, DatabaseConfig $databaseConfig)
     {
         $dsn = sprintf(
-            'odbc:DRIVER={IBM DB2 ODBC DRIVER};HOSTNAME=%s;PORT=%s;DATABASE=%s;PROTOCOL=TCPIP;',
+            'DRIVER=Db2;HOSTNAME=%s;PORT=%s;DATABASE=%s;PROTOCOL=TCPIP;',
             $databaseConfig->getHost(),
             $databaseConfig->getPort(),
             $databaseConfig->getDatabase()
@@ -26,7 +25,6 @@ class DB2PdoConnection extends PdoConnection
             $dsn,
             $databaseConfig->getUsername(),
             $databaseConfig->getPassword(),
-            []
         );
     }
 

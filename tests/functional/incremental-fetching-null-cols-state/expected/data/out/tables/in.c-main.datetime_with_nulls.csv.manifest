@@ -16,7 +16,7 @@
         },
         {
             "key": "KBC.type",
-            "value": "TABLE"
+            "value": "table"
         }
     ],
     "column_metadata": {
@@ -32,10 +32,6 @@
             {
                 "key": "KBC.datatype.basetype",
                 "value": "INTEGER"
-            },
-            {
-                "key": "KBC.datatype.length",
-                "value": "4"
             },
             {
                 "key": "KBC.datatype.default",
@@ -59,7 +55,7 @@
             },
             {
                 "key": "KBC.ordinalPosition",
-                "value": 0
+                "value": 1
             }
         ],
         "name": [
@@ -101,7 +97,7 @@
             },
             {
                 "key": "KBC.ordinalPosition",
-                "value": 1
+                "value": 2
             }
         ],
         "smalldatetime": [
@@ -118,10 +114,6 @@
                 "value": "DATE"
             },
             {
-                "key": "KBC.datatype.length",
-                "value": "4"
-            },
-            {
                 "key": "KBC.datatype.default",
                 "value": "NULL"
             },
@@ -143,7 +135,7 @@
             },
             {
                 "key": "KBC.ordinalPosition",
-                "value": 2
+                "value": 3
             }
         ],
         "datetime1": [
@@ -160,10 +152,6 @@
                 "value": "TIMESTAMP"
             },
             {
-                "key": "KBC.datatype.length",
-                "value": "10"
-            },
-            {
                 "key": "KBC.datatype.default",
                 "value": "NULL"
             },
@@ -185,7 +173,7 @@
             },
             {
                 "key": "KBC.ordinalPosition",
-                "value": 3
+                "value": 4
             }
         ],
         "datetime2": [
@@ -202,10 +190,6 @@
                 "value": "TIMESTAMP"
             },
             {
-                "key": "KBC.datatype.length",
-                "value": "10"
-            },
-            {
                 "key": "KBC.datatype.default",
                 "value": "NULL"
             },
@@ -227,7 +211,7 @@
             },
             {
                 "key": "KBC.ordinalPosition",
-                "value": 4
+                "value": 5
             }
         ]
     },

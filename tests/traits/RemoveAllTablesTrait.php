@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Keboola\DbExtractor\TraitTests;
 
-use PDO;
+use Keboola\DbExtractor\Extractor\DB2OdbcConnection;
 
 trait RemoveAllTablesTrait
 {
     use QuoteIdentifierTrait;
 
-    protected PDO $connection;
+    protected DB2OdbcConnection $connection;
 
     protected function removeAllTables(): void
     {
@@ -20,11 +20,7 @@ FROM SYSCAT.TABLES
 WHERE OWNERTYPE = 'U' AND TABSCHEMA NOT IN ('DB2INST1', 'SYSTOOLS');
 SQL;
 
-        $query = $this->connection->query($sql);
-        if (!$query) {
-            return;
-        }
-        $tables = $query->fetchAll(PDO::FETCH_ASSOC);
+        $tables = $this->connection->query($sql)->fetchAll();
 
         foreach ($tables as $table) {
             $dropSql = <<<SQL
@@ -32,8 +28,8 @@ DROP TABLE "%s"."%s";
 SQL;
             $dropSql = sprintf(
                 $dropSql,
-                trim($table['TABSCHEMA']),
-                trim($table['TABNAME'])
+                trim((string) $table['TABSCHEMA']),
+                trim((string) $table['TABNAME'])
             );
 
             $this->connection->query($dropSql);

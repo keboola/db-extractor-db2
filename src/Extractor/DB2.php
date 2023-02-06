@@ -7,6 +7,8 @@ namespace Keboola\DbExtractor\Extractor;
 use Keboola\Datatype\Definition\GenericStorage;
 use Keboola\DbExtractor\Adapter\ExportAdapter;
 use Keboola\DbExtractor\Adapter\Metadata\MetadataProvider;
+use Keboola\DbExtractor\Adapter\ODBC\OdbcExportAdapter;
+use Keboola\DbExtractor\Adapter\ODBC\OdbcNativeMetadataProvider;
 use Keboola\DbExtractor\Adapter\PDO\PdoExportAdapter;
 use Keboola\DbExtractor\Adapter\Query\DefaultQueryFactory;
 use Keboola\DbExtractor\Adapter\ResultWriter\DefaultResultWriter;
@@ -31,7 +33,7 @@ class DB2 extends BaseExtractor
         'DATE',
     ];
 
-    private DB2PdoConnection $connection;
+    private DB2OdbcConnection $connection;
 
     public function testConnection(): void
     {
@@ -40,7 +42,7 @@ class DB2 extends BaseExtractor
 
     protected function createConnection(DatabaseConfig $databaseConfig): void
     {
-        $this->connection = new DB2PdoConnection($this->logger, $databaseConfig);
+        $this->connection = new DB2OdbcConnection($this->logger, $databaseConfig);
     }
 
     protected function createExportAdapter(): ExportAdapter
@@ -48,7 +50,7 @@ class DB2 extends BaseExtractor
         $resultWriter = new DefaultResultWriter($this->state);
         $simpleQueryFactory = new DefaultQueryFactory($this->state);
 
-        return new PdoExportAdapter(
+        return new OdbcExportAdapter(
             $this->logger,
             $this->connection,
             $simpleQueryFactory,
@@ -60,7 +62,11 @@ class DB2 extends BaseExtractor
 
     protected function createMetadataProvider(): MetadataProvider
     {
-        return new DB2MetadataProvider($this->connection);
+        return new OdbcNativeMetadataProvider(
+            $this->connection,
+            null,
+            $this->getDatabaseConfig()->getDatabase(),
+        );
     }
 
     protected function validateIncrementalFetching(ExportConfig $exportConfig): void
