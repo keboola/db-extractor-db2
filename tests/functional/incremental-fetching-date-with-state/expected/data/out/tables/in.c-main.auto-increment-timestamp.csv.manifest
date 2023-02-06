@@ -96,7 +96,7 @@
             },
             {
                 "key": "KBC.uniqueKey",
-                "value": false
+                "value": true
             },
             {
                 "key": "KBC.ordinalPosition",
@@ -218,7 +218,7 @@
             },
             {
                 "key": "KBC.uniqueKey",
-                "value": false
+                "value": true
             },
             {
                 "key": "KBC.ordinalPosition",
