@@ -33,6 +33,17 @@ class DB2 extends BaseExtractor
         'DATE',
     ];
 
+    public const FIXED_LENGTH_TYPES = [
+        'BIGINT',
+        'SMALLINT',
+        'INT',
+        'INTEGER',
+        'DOUBLE',
+        'REAL',
+        'TIMESTAMP',
+        'DATE',
+    ];
+
     private DB2OdbcConnection $connection;
 
     public function testConnection(): void
@@ -62,11 +73,7 @@ class DB2 extends BaseExtractor
 
     protected function createMetadataProvider(): MetadataProvider
     {
-        return new OdbcNativeMetadataProvider(
-            $this->connection,
-            null,
-            $this->getDatabaseConfig()->getDatabase(),
-        );
+        return new DB2MetadataProvider($this->connection);
     }
 
     protected function validateIncrementalFetching(ExportConfig $exportConfig): void
