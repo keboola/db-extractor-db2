@@ -38,6 +38,26 @@ new line', 'columns with 	tab'],
 double new line'],
                 ['line with enclosure','second column'],
                 ['unicode characters','ľščťžýáíéúäôň'],
+                [
+                    'column with escaped escape character """" inside',
+                    'column with multiple escaped escape characters """"" inside',
+                ],
+                [
+                    'column with escaped enclosure at end of string: test\\"',
+                    '\\"column with escaped enclosure at beginning of string',
+                ],
+                [
+                    'column with multiple escaped enclosures: test \\"example\\"" here',
+                    '\\"column with escaped enclosure and delimiter\\"',
+                ],
+                [
+                    'column with multiple escape characters """""" inside',
+                    'column with escape character at end of string: test""',
+                ],
+                [
+                    'column with unescaped enclosure at end of string: test"',
+                    '"column with unescaped enclosure at beginning of string',
+                ],
             ],
         ];
     }
