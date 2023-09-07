@@ -50,7 +50,7 @@ class DB2MetadataProvider implements MetadataProvider
             $nameTables[] = $item['TABNAME'];
         }
 
-        if ($loadColumns) {
+        if ($loadColumns && !empty($nameTables)) {
             foreach ($this->queryColumns($nameTables) as $column) {
                 $tableId = $column['TABSCHEMA'] . '.' . $column['TABNAME'];
 
